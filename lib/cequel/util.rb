@@ -66,8 +66,9 @@ module Cequel
       include ::Forwardable
 
       def delegate(*args, &block)
-        return super if args.one?
-        Module.instance_method(:delegate).bind(self).call(*args, &block)
+        return super unless args.count == 2 && args.last&.key?(:to)
+
+        Module.instance_method(:delegate).bind(self).call(args.first, to: args.last[:to], &block)
       end
     end
   end

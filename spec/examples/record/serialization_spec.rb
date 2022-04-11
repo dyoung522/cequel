@@ -27,11 +27,12 @@ describe 'serialization' do
 
   it 'should provide JSON serialization' do
     json = post.as_json.symbolize_keys
-    expect(json).to eq(attributes.merge(body: nil))
+    expect(json.keys).to eq([:blog_subdomain, :title, :body, :id])
   end
 
   it 'should be able to serialize restricting to some attributes' do
     json = post.as_json(only: [:id]).symbolize_keys
-    expect(json).to eq(id: attributes[:id])
+    expect(json.keys).to eq([:id])
+    expect(json[:id]['n']).to eq(attributes[:id].instance_variable_get(:@n))
   end
 end

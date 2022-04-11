@@ -1,4 +1,4 @@
-FROM ruby:alpine
+FROM ruby:latest
 
 # Put the basic system setup in a layer of its own so we don't have
 # rebuild it all the time.
@@ -22,8 +22,4 @@ COPY ./lib/cequel/version.rb /cequel/lib/cequel/
 RUN gem install bundler \
     && bundle install
 
-
-COPY ./* /cequel/
-
-
-
+COPY . /cequel/

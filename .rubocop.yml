@@ -1,5 +1,12 @@
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  TargetRubyVersion: 2.7
+  SuggestExtensions: false
+  NewCops: disable
+  Exclude:
+    - "templates/record.rb"
+
 Documentation:
   Exclude:
     - "lib/cequel/version.rb"
@@ -14,4 +21,7 @@ IfUnlessModifier:
   Enabled: false
 
 DoubleNegation:
+  Enabled: false
+
+Style/MutableConstant:
   Enabled: false
