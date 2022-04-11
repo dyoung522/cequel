@@ -23,7 +23,4 @@ RUN gem install bundler \
     && bundle install
 
 
-COPY ./* /cequel/
-
-
-
+COPY . /cequel/

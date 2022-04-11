@@ -613,6 +613,8 @@ you require this functionality.
 ## Compatibility ##
 
 ### Rails ###
+* 6.1
+* 6.0
 * 5.2
 * 5.1
 * 5.0
@@ -622,7 +624,7 @@ you require this functionality.
 
 ### Ruby ###
 
-* Ruby 2.5, 2,4, 2.3, 2.2, 2.1, 2.0
+* Ruby 3.1, 2.7, 2.5, 2,4, 2.3, 2.2, 2.1, 2.0
 
 ### Cassandra ###
 
